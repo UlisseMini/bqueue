@@ -19,7 +19,7 @@ super simple implementation of a bounded queue, using an underlying array
 ```crystal
 require "bqueue"
 
-# 2 is the max size for the queue, counting from zero
+# 2 is the max size for the queue
 bq = BQueue::BQueue.new(2)
 
 bq.push 1 # [1]
