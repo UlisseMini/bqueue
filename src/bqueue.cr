@@ -4,25 +4,26 @@ module BQueue
 
   # BQueue is a bounded LIFO queue, a queue with a maximum size.
   # when the size is exeeded the last item in the queue is removed.
-  class BQueue(T)
+  class BQueue(T) < Deque(T)
     def initialize(max : Int32)
       if max < 1
         raise "max must be greater then zero (is #{max})"
       end
       @max = max
-      @array = [] of T
+
+      super
+    end
+
+    def push(*args)
+      args.each { |x| push x }
     end
 
     def push(x)
-      if @array.size >= @max
-        @array.delete_at 0
+      if size() >= @max
+        delete_at(0)
       end
 
-      @array.push x
-    end
-
-    def pop
-      @array.pop
+      super
     end
   end
 end
