@@ -1,6 +1,6 @@
 # bqueue
 
-super simple implementation of a bounded queue, using an underlying array
+super simple implementation of a bounded queue, using an underlying Deque
 
 ## Installation
 
